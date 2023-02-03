@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysqldeploy
+  name: mysql-deploy
   labels:
     app: mysql
 spec:
@@ -26,4 +26,6 @@ spec:
                 secretKeyRef:
                   name: mysql-secrets
                   key: root-password
+      imagePullSecrets:
+        - name: myregistrykey
     

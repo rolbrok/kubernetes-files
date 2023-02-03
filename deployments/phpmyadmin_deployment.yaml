@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: phpmadeploy
+  name: phpmyadmin-deploy
   labels:
     app: phpma
 spec:
@@ -22,7 +22,7 @@ spec:
             - containerPort: 80
           env:
             - name: PMA_HOST
-              value: "mysqlsvc"
+              value: "mysql-service"
             - name: PMA_PORT
               value: "3306"
             - name: MYSQL_ROOT_PASSWORD
@@ -30,3 +30,5 @@ spec:
                 secretKeyRef:
                   name: mysql-secrets
                   key: root-password
+      imagePullSecrets:
+        - name: myregistrykey
