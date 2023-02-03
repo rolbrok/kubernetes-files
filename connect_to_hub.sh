@@ -1,9 +1,9 @@
 #!/bin/sh
 
 DOCKER_REGISTRY_SERVER=docker.io
-DOCKER_USER=rolbrok
+DOCKER_USER=username
 DOCKER_EMAIL=baptiste.defrance.dev@gmail.com
-DOCKER_PASSWORD=UwEZ4nHbBN3rZZv
+DOCKER_PASSWORD=xxxxxxxxxxxxxxxxx
 
 kubectl create secret docker-registry myregistrykey \
   --docker-server=$DOCKER_REGISTRY_SERVER \
